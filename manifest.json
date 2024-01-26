@@ -1,0 +1,20 @@
+{
+    "background_color": "#000000",
+    "dir": "ltr",
+    "display": "fullscreen",
+    "name": "Appel Game",
+    "orientation": "any",
+    "scope": "/",
+    "short_name": "Appel",
+    "start_url": "/",
+    "theme_color": "#ffff00",
+    "icons": [
+      {
+        "src": "data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMiIgdmlld0JveD0iMCwwLDIwLDIyIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjMwLC0xNjgpIj48ZyBkYXRhLXBhcGVyLWRhdGE9InsmcXVvdDtpc1BhaW50aW5nTGF5ZXImcXVvdDs6dHJ1ZX0iIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWRhc2hhcnJheT0iIiBzdHJva2UtZGFzaG9mZnNldD0iMCIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0yNDksMTc5LjExMDAxYzAsNi44OSAtNCw5Ljg5IC05LDkuODljLTUsMCAtOSwtMyAtOSwtOS44OWMwLC02LjExIDYsLTguMTEgOSwtNi4xMWMzLC0yIDksMCA5LDYuMTF6IiBmaWxsPSIjZmZmZjI0IiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik0yNDEuNSwxNjguMDAwMDFjMCwxLjI1IC0xLjUsNSAtMS41LDUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTIzMywxNzcuMDAwMDFjMCwtMS42NTY4NSAxLjM0MzE1LC0zIDMsLTNjMS42NTY4NSwwIDMsMS4zNDMxNSAzLDNjMCwxLjY1Njg1IC0xLjM0MzE1LDMgLTMsM2MtMS42NTY4NSwwIC0zLC0xLjM0MzE1IC0zLC0zeiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiLz48L2c+PC9nPjwvc3ZnPg=="
+      }
+    ],
+    "lang": "en",
+    "categories": [
+      "games"
+    ]
+  }

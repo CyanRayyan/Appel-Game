@@ -1,61 +1,51 @@
-// Service Worker Script
+// Filename: service-worker.js
 
-// Define the cache name and the files to be cached
-const CACHE_NAME = 'my-cache-v1';
-const cacheUrls = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/script.js',
-  // Add more files and resources to be cached as needed
+// Define the cache name and the files to cache
+const cacheName = 'my-cache-v1';
+const cacheFiles = [
+  'index.html', // Add other files you want to cache here
 ];
 
-// Install the service worker and cache the specified files
+// Install the service worker and cache the necessary files
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => {
-        return cache.addAll(cacheUrls);
-      })
+    caches.open(cacheName).then((cache) => {
+      return cache.addAll(cacheFiles);
+    })
   );
 });
 
-// Intercept fetch requests and serve from cache if available
+// Intercept network requests and serve from cache if available
 self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
-        // If request is in cache, return it
-        if (response) {
-          return response;
-        }
+    caches.match(event.request).then((response) => {
+      // If the file is in the cache, return it
+      if (response) {
+        return response;
+      }
 
-        // If request is not in cache, fetch and cache it
-        return fetch(event.request).then((response) => {
-          // Clone the response as it can be consumed only once
-          const responseClone = response.clone();
+      // If the file is not in the cache, fetch it from the network
+      return fetch(event.request).then((response) => {
+        // Cache the fetched response
+        event.waitUntil(
+          caches.open(cacheName).then((cache) => {
+            return cache.put(event.request, response.clone());
+          })
+        );
 
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, responseClone);
-          });
-
-          return response;
-        });
-      })
-      .catch(() => {
-        // If an error occurs during fetch, return a simple offline page
-        return caches.match('/offline.html');
-      })
+        return response;
+      });
+    })
   );
 });
 
-// Remove outdated caches when the service worker is activated
+// Update the cache in the background
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((name) => {
-          if (name !== CACHE_NAME) {
+          if (name !== cacheName) {
             return caches.delete(name);
           }
         })
