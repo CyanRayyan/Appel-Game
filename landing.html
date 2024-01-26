@@ -13,7 +13,7 @@
         }
 
         header {
-            background-color: #333;
+            background-color: #ffff00;
             color: white;
             text-align: center;
             padding: 1em;
@@ -65,9 +65,45 @@
 
     <script>
         function installPWA() {
-            // Code to prompt PWA installation goes here
-            // This would typically involve the use of a service worker and a manifest file
-            alert("Install PWA functionality to be implemented.");
+            // Check if the browser supports service workers
+            if ('serviceWorker' in navigator) {
+                // Register the service worker
+                navigator.serviceWorker.register('/service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch(error => {
+                    console.error('Service Worker registration failed:', error);
+                });
+
+                // Check if the browser supports the BeforeInstallPromptEvent
+                if ('BeforeInstallPromptEvent' in window) {
+                    // Listen for the beforeinstallprompt event
+                    window.addEventListener('beforeinstallprompt', (event) => {
+                        // Prevent the default behavior
+                        event.preventDefault();
+
+                        // Show the installation prompt
+                        const installButton = document.getElementById('installButton'); // Change this to your button ID
+                        installButton.style.display = 'block'; // Make the install button visible
+
+                        // Handle the user's choice
+                        installButton.addEventListener('click', () => {
+                            // Show the installation prompt
+                            event.prompt();
+
+                            // Wait for the user to respond
+                            event.userChoice.then((choiceResult) => {
+                                if (choiceResult.outcome === 'accepted') {
+                                    console.log('User accepted the PWA installation');
+                                } else {
+                                    console.log('User declined the PWA installation');
+                                }
+                            });
+                        });
+                    }
+                }
+            }
         }
     </script>
 </body>
