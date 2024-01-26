@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>appel Game</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            text-align: center;
+            margin: 2em;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2em;
+        }
+
+        .install-button, .play-online-button {
+            padding: 1em 2em;
+            font-size: 1.2em;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .install-button {
+            background-color: #4CAF50;
+        }
+
+        .play-online-button {
+            background-color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>appel Game</h1>
+    </header>
+
+    <section>
+        <h2>Welcome to the World of appel!</h2>
+        <p>Experience the excitement of this thrilling game.</p>
+    </section>
+
+    <div class="cta-buttons">
+        <a href="#" class="install-button" onclick="installPWA()">Install PWA</a>
+        <a href="/game" class="play-online-button">Play Online</a>
+    </div>
+
+    <script>
+        function installPWA() {
+            // Code to prompt PWA installation goes here
+            // This would typically involve the use of a service worker and a manifest file
+            alert("Install PWA functionality to be implemented.");
+        }
+    </script>
+</body>
+</html>
