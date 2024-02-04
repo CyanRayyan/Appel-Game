@@ -7,7 +7,7 @@ InstallerType: inno
 InstallerSwitches:
   Silent: /SILENT
 Installers:
-- InstallerUrl: https://github.com/krishisrani61/Appel-Game/raw/main/winget/AppelSetup.exe
+- InstallerUrl: https://krishisrani61.github.io/Appel-Game/winget/AppelSetup.exe
   Architecture: neutral
   InstallerSha256: 005FEDB75DBF8E62CE1E630F08114680797BA84FF165A730133A32944C84B201
 ManifestType: installer
